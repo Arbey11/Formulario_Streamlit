@@ -36,9 +36,9 @@ if iniciar_sesion:
     if nombre.strip() == "" or contrasena.strip() == "":
         st.warning("Por favor, completa todos los campos.")
     else:
-        conexion = sqlite3.connect('usuarios.db')
+        conexion = sqlite3.connect('users.db')
         cursor = conexion.cursor()
-        cursor.execute("SELECT * FROM usuarios WHERE nombre=? AND contrasena=?", (nombre, contrasena))
+        cursor.execute("SELECT * FROM USUARIOS WHERE nombre=? AND contrasena=?", (nombre, contrasena))
         resultado = cursor.fetchone()
         conexion.close()
 
@@ -51,19 +51,18 @@ elif registrarse:
     if nombre.strip() == "" or contrasena.strip() == "":
         st.warning("Por favor, completa todos los campos.")
     else:
-        conexion = sqlite3.connect('usuarios.db')
+        conexion = sqlite3.connect('users.db')
         cursor = conexion.cursor()
 
         # Verificar si ya existe un usuario con ese nombre
-        cursor.execute("SELECT * FROM usuarios WHERE nombre=?", (nombre,))
+        cursor.execute("SELECT * FROM USUARIOS WHERE nombre=?", (nombre,))
         existente = cursor.fetchone()
 
         if existente:
             st.error("Este nombre de usuario ya está registrado.")
         else:
-            cursor.execute("INSERT INTO usuarios (nombre, contrasena) VALUES (?, ?)", (nombre, contrasena))
+            cursor.execute("INSERT INTO USUARIOS (nombre, contrasena) VALUES (?, ?)", (nombre, contrasena))
             conexion.commit()
             st.success(f"¡Usuario {nombre} registrado exitosamente!")
 
         conexion.close()
-

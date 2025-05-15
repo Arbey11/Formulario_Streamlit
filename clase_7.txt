@@ -1,0 +1,13 @@
+para subir o compartir proyectos con streamlit se debe tener:
+- cuenta de github
+- el archivo a compartir debe tener un archivo llamado requirements.txt el cual nos dice que librerias debe tener el archivo que vamos a compartir
+- para crear dicho archivo se instala la libreria pipreqs (pip install pipreqs)
+- luego en la consola se pone pipreqs . (crea requirements.txt para el directorio actual donde estoy trabajando)
+- luego subimos el archivo a la cuenta de github (por medio de push origin master)
+- luego me logeo en la cuenta gratis de streamlit: https://streamlit.io/
+- click create app
+- click deploy a publick app from github
+- llenar los datos para publicar la app 
+
+ACTIVIDAD:
+les puedo poner que suban un proyecto referente al de las graficas, que me manden el link, que yo pueda ingresar y descargar la grafica que quiera. 
